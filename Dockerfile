@@ -6,13 +6,15 @@ ENV HUBOT_NAME jtbot
 ENV HUBOT_OWNER jt
 ENV HUBOT_DESCRIPTION Hubot
 
-# Install Hubot
-RUN npm install -g yo generator-hubot
 
 # Create and select Hubot User
 RUN adduser --disabled-password --gecos "" hubot && \
   echo "hubot ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER hubot
+
+# Install Hubot
+RUN npm install -g yo generator-hubot
+
 # chmod dir
 RUN chown -R $USER $HOME/.npm
 
