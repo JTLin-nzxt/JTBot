@@ -1,4 +1,4 @@
-FROM jtbot:latest
+FROM node:latest
 
 # Environment variables
 ENV DEBIAN_FRONTEND noninteractive
