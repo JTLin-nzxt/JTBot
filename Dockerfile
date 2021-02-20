@@ -1,8 +1,8 @@
-FROM JTBot:latest
+FROM jtbot:latest
 
 # Environment variables
 ENV DEBIAN_FRONTEND noninteractive
-ENV HUBOT_NAME JTBot
+ENV HUBOT_NAME jtbot
 ENV HUBOT_OWNER jt
 ENV HUBOT_DESCRIPTION Hubot
 
