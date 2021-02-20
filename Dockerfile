@@ -1,4 +1,4 @@
-FROM node:latest
+FROM hubot-slack:latest
 
 # Environment variables
 ENV DEBIAN_FRONTEND noninteractive
@@ -10,7 +10,7 @@ ENV HUBOT_DESCRIPTION hubot
 RUN adduser --disabled-password --gecos "" hubot && \
   echo "hubot ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-RUN npm install -g yo hubot --owner="${HUBOT_OWNER}" --name="${HUBOT_NAME}" --description="${HUBOT_DESCRIPTION}" --defaults
+RUN yo hubot --owner="${HUBOT_OWNER}" --name="${HUBOT_NAME}" --description="${HUBOT_DESCRIPTION}" --defaults
 
 # Change user to hubot
 ENV HOME /home/hubot
