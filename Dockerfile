@@ -10,7 +10,7 @@ ENV HUBOT_DESCRIPTION hubot
 RUN adduser --disabled-password --gecos "" hubot && \
   echo "hubot ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-RUN npm install -g yo generator-hubot --owner="${HUBOT_OWNER}" --name="${HUBOT_NAME}" --description="${HUBOT_DESCRIPTION}" --defaults
+RUN yo hubot --owner="${HUBOT_OWNER}" --name="${HUBOT_NAME}" --description="${HUBOT_DESCRIPTION}" --defaults
 
 # Change user to hubot
 ENV HOME /home/hubot
