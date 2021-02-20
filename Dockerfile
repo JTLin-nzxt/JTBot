@@ -1,4 +1,4 @@
-FROM hubot:latest
+FROM 3ch01c/hubot:latest
 
 # Environment variables
 ENV DEBIAN_FRONTEND noninteractive
