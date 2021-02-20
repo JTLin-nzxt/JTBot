@@ -1,4 +1,4 @@
-FROM jtbot:01
+FROM hubot-slack:latest
 
 # Environment variables
 ENV DEBIAN_FRONTEND noninteractive
