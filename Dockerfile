@@ -10,7 +10,7 @@ ENV HUBOT_DESCRIPTION Hubot
 RUN npm install -g yo generator-hubot
 
 # chmod dir
-RUN chown -R $USER $HOME/.npm
+RUN chmod g+rwx /root /root/.config /root/.config/configstore
 
 # Init Hubot and environments
 RUN yo hubot --owner="${HUBOT_OWNER}" --name="${HUBOT_NAME}" --description="${HUBOT_DESCRIPTION}" --defaults && sed -i /heroku/d ./external-scripts.json && sed -i /redis-brain/d ./external-scripts.json && npm install mysql && npm install rabbitmq
