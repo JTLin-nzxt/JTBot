@@ -6,7 +6,7 @@ ENV HUBOT_NAME myhubot
 ENV HUBOT_OWNER jt
 ENV HUBOT_DESCRIPTION Hubot
 
-RUN useradd hubot -m
+# RUN useradd hubot -m
 
 # RUN npm install -g hubot coffeescript yo generator-hubot
 
