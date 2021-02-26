@@ -1,4 +1,4 @@
-FROM hubot-slack:latest
+FROM node:latest
 
 # Environment variables
 ENV DEBIAN_FRONTEND noninteractive
@@ -6,9 +6,9 @@ ENV HUBOT_NAME myhubot
 ENV HUBOT_OWNER jt
 ENV HUBOT_DESCRIPTION Hubot
 
-# RUN useradd hubot -m
+RUN useradd hubot -m
 
-# RUN npm install -g hubot coffee-script yo generator-hubot
+RUN npm install -g hubot coffee-script yo generator-hubot
 
 USER hubot
 
