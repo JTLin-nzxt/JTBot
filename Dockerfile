@@ -8,11 +8,11 @@ ENV HUBOT_DESCRIPTION Hubot
 
 RUN useradd hubot -m
 
-RUN npm install -g hubot coffee-script yo generator-hubot
-
 USER hubot
 
 WORKDIR /home/hubot
+
+RUN npm install -g hubot coffee-script yo generator-hubot
 
 RUN yo hubot --owner="${HUBOT_OWNER}" --name="${HUBOT_NAME}" --description="${HUBOT_DESCRIPTION}" --adapter=slack && npm install hubot-slack --save  
 #setting the external-scripts on the line17↑
