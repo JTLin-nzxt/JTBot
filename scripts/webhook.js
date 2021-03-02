@@ -2,7 +2,7 @@ module.exports = function(robot)
 {
 	robot.router.get('/hubot/test/:room', function(req, res) 
     {
-		console.log("root attack : #{req.params.room}");
+		console.log("root attack : " + req.params.room;
 		res.send('OK');
     });
 	
@@ -12,7 +12,7 @@ module.exports = function(robot)
 		room   = req.params.room;
 		data = req.body;
 		console.log(data);
-		robot.messageRoom(room, "Acumatica Webhook : #{data}");
+		robot.messageRoom(room, "Acumatica Webhook :" + data;
 		res.send('OK');
     });
 }
