@@ -6,7 +6,7 @@ module.exports = function(robot)
 		res.send('OK');
     });
 	
-    robot.router.post('/hubot/acumatica-webhook/:room', function(req, res) 
+    robot.router.post('/hubot/acumatica/:room', function(req, res) 
     {
 		//room = "G01P1JPCMEG";
 		room   = req.params.room;
