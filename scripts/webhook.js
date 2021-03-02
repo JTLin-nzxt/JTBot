@@ -1,6 +1,6 @@
 module.exports = function(robot) 
 {
-    robot.router.post('/acumaticaWebhook/', (req, res) 
+    robot.router.post('/acumaticaWebhook/', function(req, res) 
     {
 		room = "G01P1JPCMEG";
 		data = if req.body.payload? then JSON.parse req.body.payload else req.body;
