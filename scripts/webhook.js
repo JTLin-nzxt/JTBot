@@ -10,9 +10,14 @@ module.exports = function(robot)
     {
 		//room = "G01P1JPCMEG";
 		room   = req.params.room;
+		try{
 		data = req.body;
 		console.log(data);
 		robot.messageRoom(room, "Acumatica Webhook :" + data);
 		res.send('OK');
+		}
+		catch(Exception e){
+			res.send(e);
+		}
     });
 }
