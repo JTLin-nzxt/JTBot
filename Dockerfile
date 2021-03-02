@@ -7,9 +7,11 @@ ENV HUBOT_OWNER jt
 ENV HUBOT_DESCRIPTION Hubot
 ENV HUBOT_ADAPTER slack
 
-# RUN useradd hubot -m
+RUN useradd hubot -m
 
 RUN npm install -g hubot coffee-script yo generator-hubot
+
+USER hubot
 
 WORKDIR /home/hubot
 
