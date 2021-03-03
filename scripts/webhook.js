@@ -6,7 +6,7 @@ module.exports = function(robot)
 		robot.messageRoom("G01P1JPCMEG", "Acumatica Webhook : " + data);
 		res.send('OK');
     });
-	robot.router.get('/hubot/webhook-get/:room', function(req, res) 
+	robot.router.get('/hubot/webhook-get/', function(req, res) 
     {
 		var room = req.params.room;
 		var payload = req.params.payload;
