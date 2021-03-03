@@ -7,10 +7,11 @@ module.exports = function(robot)
 		res.send('OK');
     });
 	
-	robot.router.get('/hubot/webhook-get/:room', function(req, res) 
+	robot.router.get('/hubot/webhook-get/:room/:content', function(req, res) 
     {
 		var room = req.params.room;
-		robot.messageRoom(room, "Webhook touched!");
+		var content = req.params.content;
+		robot.messageRoom(room, "Webhook touched! : " + content);
 		res.send('OK');
     });
 }
