@@ -1,9 +1,10 @@
 module.exports = function(robot) 
 {
-	robot.router.post('/hubot/acumatica-webhook/', function(req, res) 
+	robot.router.post('/hubot/acumatica-webhook/:room', function(req, res) 
     {
+		var room = req.params.room;
 		data = JSON.stringify(req.body);
-		robot.messageRoom("G01P1JPCMEG", "Acumatica Webhook : " + data);
+		robot.messageRoom(room, "Acumatica Webhook : " + data);
 		res.send('OK');
     });
 	
@@ -11,7 +12,7 @@ module.exports = function(robot)
     {
 		var room = req.params.room;
 		var content = req.params.content;
-		robot.messageRoom(room, "Webhook touched! : " + content);
+		robot.messageRoom(room, content);
 		res.send('OK');
     });
 }
