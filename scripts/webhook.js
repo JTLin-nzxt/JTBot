@@ -6,10 +6,10 @@ module.exports = function(robot)
 		robot.messageRoom("G01P1JPCMEG", "Acumatica Webhook : " + data);
 		res.send('OK');
     });
-	robot.router.get('/hubot/webhook-get/:room/:content', function(req, res) 
+	robot.router.get('/hubot/webhook-get/:room', function(req, res) 
     {
 		var room = req.params.room;
-		var content = req.params.content;
+		var payload = req.params.payload;
 		robot.messageRoom(room, "Get Webhook : " + content);
 		res.send('OK');
     });
